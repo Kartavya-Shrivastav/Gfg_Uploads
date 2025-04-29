@@ -1,51 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Node{
+struct Node {
     int data;
-    Node* next;
-    Node(int data)
-    {
-        this->data = data;
+    struct Node *next;
+    Node(int x) {
+        data = x;
         next = NULL;
     }
 };
 
 class Solution {
-    static Node segregate(Node head) {
-        int zero = 0, one = 0, two = 0;
-        Node curr = head;
-        while(curr!=null){
-            if(curr.data==0){
-                zero++;
-            }
-            else if(curr.data==1){
-                one++;
-            }
-            else{
-                two++;
-            }
-            curr = curr.next;
-        }
+public:
+    Node* segregate(Node* h) {
+        multiset<int> s;
+        Node *p = h;
         
-        curr = head;
+        while(p) s.insert(p->data), p = p->next;
         
-        while(curr!=null){
-            if(zero!=0){
-                curr.data = 0;
-                zero--;
-            }
-            else if(one!=0){
-                curr.data = 1;
-                one--;
-            }
-            else if(two!=0){
-                curr.data = 2;
-                two--;
-            }
-            curr = curr.next;
-        }
+        p = h;
+        for(int i : s) p->data = i, p = p->next;
         
-        return head;
+        return h;
     }
-}
+};
