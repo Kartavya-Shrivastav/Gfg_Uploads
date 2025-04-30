@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 
 struct Node {
     int data;
@@ -23,7 +25,7 @@ public:
         }
         return count;
     }
-    // Function to find the length of a loop in the linked list.
+
     int countNodesinLoop(Node *head)
     {
         Node *slow = head;
