@@ -24,7 +24,7 @@ bool isprime(int num){
 
 
 int neigh(int num) {
-    if (isprime(num)) return num; // If num is already prime
+    if (isprime(num)) return num;
     
     int l = num - 1;
     int h = num + 1;
