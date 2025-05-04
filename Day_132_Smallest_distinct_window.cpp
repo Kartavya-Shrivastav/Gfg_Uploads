@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 
 class Solution {
 public:
@@ -22,7 +24,7 @@ public:
                 tail++;
             }
         }
-        
+
         return ans;
 }
 
