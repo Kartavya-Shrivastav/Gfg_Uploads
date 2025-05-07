@@ -1,7 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution {
+struct Node
+{
+    int data;
+    struct Node *left;
+    struct Node *right;
+
+    Node(int x)
+    {
+        data = x;
+        left = right = NULL;
+    }
+};
+
+class Solution{
 public:
     vector<vector<int>> Paths(Node* root) {
         vector<vector<int>> result;
