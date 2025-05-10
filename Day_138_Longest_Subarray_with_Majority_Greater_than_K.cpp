@@ -1,10 +1,11 @@
+#include<bits/stdc++.h>
+using namespace std;
 
-// User function Template for C++
 class Solution {
-  public:
+    public:
     int longestSubarray(vector<int> &arr, int k) {
         // Code here
-          int n=arr.size();
+        int n=arr.size();
         vector<int>diff(n);
         for(int i=0;i<n;i++){
             if(arr[i]>k){
