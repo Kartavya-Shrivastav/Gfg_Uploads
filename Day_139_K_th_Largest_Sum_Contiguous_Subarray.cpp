@@ -1,11 +1,10 @@
-
-// User function Template for C++
+#include<bits/stdc++.h>
+using namespace std;
 
 class Solution {
-  public:
+public:
     int kthLargest(vector<int> &arr, int k) {
-        // code here
-         priority_queue<int,vector<int>,greater<int>>pq;
+        priority_queue<int,vector<int>,greater<int>>pq;
         int n=arr.size();
         for(int i=0;i<n;i++){
             int sum=0;
