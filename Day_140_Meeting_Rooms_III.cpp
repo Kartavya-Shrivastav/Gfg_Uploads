@@ -1,10 +1,8 @@
 
-// User function Template for C++
 class Solution {
-  public:
+public:
     int mostBooked(int n, vector<vector<int>> &meetings) {
-        // code here
-         int m=meetings.size();
+        int m=meetings.size();
         sort(meetings.begin(),meetings.end());
         vector<int>count(n,0);
         priority_queue<int,vector<int>,greater<int>>free;
