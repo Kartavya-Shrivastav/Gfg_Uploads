@@ -1,8 +1,7 @@
 class Solution {
-  public:
+public:
     string countAndSay(int n) {
-        // code here
-          string str="1";
+        string str="1";
         if(n==1)
         return str;
         while(n>1){
