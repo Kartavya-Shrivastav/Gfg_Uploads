@@ -1,5 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
 
-/* BST Node
 class Node
 {
     public:
@@ -12,12 +13,11 @@ class Node
         left = NULL;
         right = NULL;
     }
-}; */
+};
 
 class Solution {
 public:
     vector<Node*> findPreSuc(Node* root, int key) {
-        // code here
          Node *tmp1 = root, *tmp2 = root;
         Node *ans1 = NULL, *ans2 = NULL;
         while(tmp1 != NULL) {
