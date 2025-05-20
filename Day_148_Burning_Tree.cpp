@@ -1,7 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
 
-/*
+
 class Node {
-  public:
+public:
     int data;
     Node *left;
     Node *right;
@@ -11,12 +13,11 @@ class Node {
         left = right = NULL;
     }
 };
-*/
+
 class Solution {
-  public:
+public:
     int minTime(Node* root, int target) {
-        // code here
-         map<Node*, Node*>parents;
+        map<Node*, Node*>parents;
         queue<Node*>q1;
         q1.push(root);
         Node* targetnode = NULL;
@@ -82,7 +83,7 @@ class Solution {
             }
         }
                 
-        return required_sec;  
+        return required_sec;
     
     }
 };
