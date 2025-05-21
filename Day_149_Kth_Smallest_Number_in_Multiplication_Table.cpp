@@ -1,5 +1,5 @@
 class Solution {
-  public:
+public:
     int kthSmallest(int m, int n, int k) {
         // code here
          int low = 1, high = m * n, ans = -1;
@@ -9,7 +9,7 @@ class Solution {
             int count = 0;
             
             for (int i = 1; i <= m; ++i) {
-                count += min(mid / i, n); 
+                count += min(mid / i, n);
             }
     
             if (count >= k) {
