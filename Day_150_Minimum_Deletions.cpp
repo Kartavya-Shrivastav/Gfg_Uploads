@@ -1,7 +1,7 @@
 class Solution {
-  public:
+public:
     int minDeletions(string s) {
-        // code here
+        
         int n = s.length();
         string rev = s;
         reverse(rev.begin(), rev.end());
@@ -19,6 +19,6 @@ class Solution {
         }
 
         int lps = dp[n][n];
-        return n - lps; 
+        return n - lps;
     }
 };
