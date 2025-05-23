@@ -9,8 +9,7 @@ public:
         
         for(int i = n - 1; i >= 0; i--) {
             for(int s = 1; s <= x; s++) {
-                curr[s] = curr[s - 1] + next[s - 1] - 
-                ((s - 1 - m >= 0) ? next[s - 1 - m] : 0);
+                curr[s] = curr[s - 1] + next[s - 1] - ((s - 1 - m >= 0) ? next[s - 1 - m] : 0);
             }
             next = curr;
         }
