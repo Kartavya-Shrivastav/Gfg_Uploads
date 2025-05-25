@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Function to insert a new node with given data into a sorted circular linked list
+
 class Solution {
   public:
     Node* sortedInsert(Node* head, int data) {
