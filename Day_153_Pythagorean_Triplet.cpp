@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// Function to find the sum of all substrings of a number represented as a string
+// Time Complexity: O(n^2), where n is the length of the string
+// Space Complexity: O(1), as we are using a constant amount of extra space
 class Solution {
   public:
     bool pythagoreanTriplet(vector<int>& arr) {
