@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Function to find the sum of all substrings of a number represented as a string
 
 class Solution {
   public:
