@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Function to print leaf nodes from the preorder traversal of a BST
+// Given a preorder traversal of a BST, this function returns the leaf nodes.
+
 class Solution {
   public:
     vector<int> leafNodes(vector<int>& preorder) {
-        // code here
-         vector<int> ans;
+        vector<int> ans;
         stack<int> st;
         
         st.push(preorder[0]);
