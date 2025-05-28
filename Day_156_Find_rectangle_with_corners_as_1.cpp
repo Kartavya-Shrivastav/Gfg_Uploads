@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Function to check if there exists a rectangle with corners as 1 in a binary matrix
+
 class Solution {
   public:
     bool ValidCorner(vector<vector<int> >& mat) {
