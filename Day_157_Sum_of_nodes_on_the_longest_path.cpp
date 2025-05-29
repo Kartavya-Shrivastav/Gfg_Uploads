@@ -1,3 +1,16 @@
+class Node {
+  public:
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int x) {
+        data = x;
+        left = NULL;
+        right = NULL;
+    }
+};
+
 class Solution {
   public:
   int longroot=0;
