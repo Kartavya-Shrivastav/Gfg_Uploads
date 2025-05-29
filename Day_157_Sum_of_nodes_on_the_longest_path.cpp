@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Definition for a binary tree node.
 class Node {
   public:
     int data;
@@ -11,6 +15,7 @@ class Node {
     }
 };
 
+// Function to find the sum of nodes on the longest path from root to leaf in a binary tree
 class Solution {
   public:
   int longroot=0;
