@@ -1,3 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+/*
+This code defines a Solution class with a method to find the kth smallest element in a sorted matrix.
+The matrix is sorted row-wise and column-wise.
+The algorithm uses binary search on the value range between the smallest and largest elements in the matrix.
+For each mid value, it counts how many elements in the matrix are less than or equal to mid using upper_bound.
+If the count is at least k, it narrows the search to the left half; otherwise, to the right half.
+The answer is updated accordingly.
+*/
 class Solution {
   public:
     int kthSmallest(vector<vector<int>> &matrix, int k) {
