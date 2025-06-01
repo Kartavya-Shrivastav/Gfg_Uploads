@@ -1,3 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+This code defines a Solution class with a method to count pairs of elements from two matrices that sum up to a given value x.
+The method iterates through each element of the first matrix (mat1) and checks if there exists an element in the second matrix (mat2) such that their sum equals x.
+It uses a helper function `isSum` that performs a binary search on the second matrix to find if the required sum exists.
+*/
+
+
 class Solution {
   public:
     bool isSum(vector<vector<int>> &mat2, int sum){
