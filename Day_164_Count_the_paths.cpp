@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+// This code defines a Solution class with a method to count the number of paths from a source vertex to a destination vertex in a directed graph represented by edges.
+
 class Solution {
   public:
     int dfs(int curr, int dest, vector<vector <int>>& adj, vector <int>& vis){
