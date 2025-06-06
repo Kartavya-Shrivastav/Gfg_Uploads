@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+// This code defines a Solution class with a method to search for anagrams of a pattern in a given text using frequency counting.
+
 class Solution {
   public:
     vector<int> search(string &pat, string &txt) {
