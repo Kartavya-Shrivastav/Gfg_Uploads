@@ -1,3 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// This code defines a Solution class with a method to find the longest span with equal sum in two binary arrays.
+
 class Solution {
   public:
     int longestCommonSum(vector<int> &a1, vector<int> &a2) {
