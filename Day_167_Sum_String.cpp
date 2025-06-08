@@ -1,3 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+// This code defines a Solution class with a method to check if a string can be formed by the sum of two numbers represented as substrings.
+// The method checks all possible pairs of substrings and verifies if the remaining part of the string can be formed by their sum.
+
 class Solution {
     public boolean isSumString(String s) {
         int n = s.length();
