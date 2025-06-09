@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node{
+    int data;
+    struct Node *left;
+    struct Node *right;
+
+    Node(int x){
+        data = x;
+        left = NULL;
+        right = NULL;
+    }
+};
+
 class Solution{
   public:
     vector<int> arr, leaf;
