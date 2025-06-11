@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Function to remove balls and return the number of remaining balls
+
 class Solution {
   public:
     int findLength(vector<int> &color, vector<int> &radius) {
