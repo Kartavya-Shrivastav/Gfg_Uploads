@@ -5,27 +5,29 @@ using namespace std;
 
 
 class Solution {
-  public:
-    int smallestDivisor(vector<int>& arr, int k) {
-        // Code here
-        int n = arr.size();
-        int low = 1;
-        int maxE = *max_element(arr.begin(), arr.end());
-        int high = maxE + k;
-        int ans = high;
-        while(low <= high){
-            int mid = low + (high - low)/2;
-            int count = 0;
-            for(auto &e : arr){
-                count += ceil((double)e/mid);
-            }
-            if(count <= k){
-                ans = min(mid, ans);
-                high = mid - 1;
-            }else{
-                low = mid + 1;
-            }
+    public:
+        int smallestDivisor(vector<int>& arr, int k) {
+                // Find the smallest divisor such that the sum of quotients is <= k
+                int n = arr.size();
+                int low = 1; // Smallest possible divisor
+                int maxE = *max_element(arr.begin(), arr.end()); // Largest element in array
+                int high = maxE + k; // Upper bound for binary search
+                int ans = high; // Initialize answer with upper bound
+                while(low <= high){
+                        int mid = low + (high - low)/2; // Current divisor to check
+                        int count = 0; // Sum of quotients
+                        for(auto &e : arr){
+                                count += ceil((double)e/mid); // Add quotient for each element
+                        }
+                        if(count <= k){
+                                // If sum of quotients is within limit, try smaller divisor
+                                ans = min(mid, ans);
+                                high = mid - 1;
+                        }else{
+                                // Otherwise, try larger divisor
+                                low = mid + 1;
+                        }
+                }
+                return ans; // Return the smallest valid divisor
         }
-        return ans;
-    }
 };
