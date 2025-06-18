@@ -1,4 +1,9 @@
-void f(vector<string> &ans, string s, int n, int o, int c) {
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+  public:
+    void f(vector<string> &ans, string s, int n, int o, int c) {
         if(o + c == n) {
             ans.push_back(s);
             return;
@@ -14,3 +19,4 @@ void f(vector<string> &ans, string s, int n, int o, int c) {
         f(ans, "", n, 0, 0);
         return ans;
     }
+};
