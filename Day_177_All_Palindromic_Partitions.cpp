@@ -1,6 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: All Palindromic Partitions
+// Approach: Backtracking
+
+// Steps:
+// 1. Define a function to check if a string is a palindrome.
+// 2. Use backtracking to explore all possible partitions of the string.
+// 3. For each partition, check if the substring is a palindrome.
+// 4. If it is, add it to the current partition and continue exploring.
+// 5. If the end of the string is reached, add the current partition to the result.
+// 6. Return the result containing all palindromic partitions.
+
+// Time Complexity: O(2^n * n) where n is the length of the string
+// Space Complexity: O(n) for the recursion stack and temporary storage
+
 class Solution {
   public:
-  
     vector<vector<string>> res;
     
     bool check(string &s){
