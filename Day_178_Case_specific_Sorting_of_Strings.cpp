@@ -15,22 +15,26 @@ using namespace std;
 // Space Complexity: O(N) for the sorted copy of the string
 
 class Solution {
-  public:
-    string caseSort(string& s) {
-        // code here
-         string p = s;
-        sort(p.begin(), p.end());
-        int i = 0;
-        for(auto& ch : s){
-            if(isupper(ch)){
-                ch = p[i++];
-            }
+    public:
+        string caseSort(string& s) {
+                // Make a copy of the original string to sort all characters
+                string p = s;
+                sort(p.begin(), p.end()); // Sort the copy
+
+                int i = 0;
+                // First pass: Replace uppercase letters in s with sorted uppercase letters from p
+                for(auto& ch : s){
+                        if(isupper(ch)){
+                                ch = p[i++];
+                        }
+                }
+                // Second pass: Replace lowercase letters in s with sorted lowercase letters from p
+                for(auto& ch : s){
+                        if(islower(ch)){
+                                ch = p[i++];
+                        }
+                }
+                // Return the case-specific sorted string
+                return s;
         }
-        for(auto& ch : s){
-            if(islower(ch)){
-                ch = p[i++];
-            }
-        }
-        return s;
-    }
 };
