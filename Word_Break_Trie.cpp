@@ -13,58 +13,71 @@ using namespace std;
 // Time Complexity: O(n * m), where n is the length of string A and m is the average length of words in B.
 // Space Complexity: O(k), where k is the total number of characters in all words in B.
 
+// Trie node structure
 struct node{
-  node *child[26];
-  bool isEnd;
-  node(){
-      for(int i=0;i<26;i++){
-          child[i]=NULL;
-          isEnd=false;
-      }
-  }
-};
-void insert(node *root,string s){
-    for(int i=0;i<s.length();i++){
-        if(root->child[s[i]-'a'])root=root->child[s[i]-'a'];
-        else{
-            root->child[s[i]-'a']=new node();
-            root=root->child[s[i]-'a'];
+    node *child[26]; // Pointers to child nodes for each alphabet letter
+    bool isEnd;      // Flag to indicate end of a word
+
+    node(){
+        for(int i=0;i<26;i++){
+            child[i]=NULL; // Initialize all children as NULL
+            isEnd=false;   // Mark as not end of word
         }
     }
-    root->isEnd=true;
+};
+
+// Insert a word into the Trie
+void insert(node *root, string s){
+    for(int i=0; i<s.length(); i++){
+        if(root->child[s[i]-'a']) // If child exists, move to it
+            root = root->child[s[i]-'a'];
+        else{
+            root->child[s[i]-'a'] = new node(); // Create new node if not present
+            root = root->child[s[i]-'a'];
+        }
+    }
+    root->isEnd = true; // Mark end of word
 }
+
 class Solution{
-    public:
-    // A : given string to search
-    // B : vector of available strings
-    bool search(node *root,string A){
-  int n=A.length();
-  node *temp=root;
+public:
+    // Search if a word exists in the Trie
+    bool search(node *root, string A){
+        int n = A.length();
+        node *temp = root;
 
-  for(int i=0;i<n;i++){
-      if(!temp->child[A[i]-'a'])return false;
-    temp=temp->child[A[i]-'a'];
+        for(int i=0; i<n; i++){
+            if(!temp->child[A[i]-'a']) // If child doesn't exist, word not found
+                return false;
+            temp = temp->child[A[i]-'a'];
+        }
+
+        return (temp && temp->isEnd); // Return true if end of word is reached
     }
 
-  return (temp&&temp->isEnd);
-  }
-bool solve(node *root,string s){
-    int n=s.length();
-    if(n==0)return true;
-    for(int i=1;i<=n;i++){
-         if (search(root, s.substr(0, i))
-            && solve(root,s.substr(i,n-i)))
-            return true;
+    // Recursive function to check if string can be segmented
+    bool solve(node *root, string s){
+        int n = s.length();
+        if(n == 0) return true; // If string is empty, segmentation is possible
+
+        // Try all prefixes of the string
+        for(int i=1; i<=n; i++){
+            // If prefix exists in Trie and remaining string can be segmented
+            if (search(root, s.substr(0, i)) && solve(root, s.substr(i, n-i)))
+                return true;
+        }
+        return false; // No valid segmentation found
     }
-    return false;
-}
     
+    // Main function to check if word break is possible
     int wordBreak(string A, vector<string> &B) {
-     node *root= new node();
- 
-      for(auto it:B)insert(root,it);
-      
-      return solve(root,A);
-      
+        node *root = new node();
+
+        // Insert all dictionary words into Trie
+        for(auto it : B)
+            insert(root, it);
+        
+        // Check if string A can be segmented
+        return solve(root, A);
     }
 };
