@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given a string A and a dictionary of strings B, determine if A can be segmented into a space-separated sequence of one or more dictionary words from B.
+// Approach: We can use a Trie data structure to store the dictionary words and then use a recursive function to check if the string A can be segmented using the words in the Trie.
+
+// Steps:
+// 1. Create a Trie node structure to represent each character in the dictionary words.
+// 2. Insert each word from the dictionary B into the Trie.
+// 3. Implement a search function to check if a substring exists in the Trie.
+// 4. Use a recursive function to check if the string A can be segmented by checking all possible prefixes and recursively checking the remaining substring.
+
+// Time Complexity: O(n * m), where n is the length of string A and m is the average length of words in B.
+// Space Complexity: O(k), where k is the total number of characters in all words in B.
+
 struct node{
   node *child[26];
   bool isEnd;
