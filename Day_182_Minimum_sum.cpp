@@ -14,21 +14,29 @@ using namespace std;
 // 6. If there's a carry left after processing all pairs, append it to the result.
 // 7. Reverse the result string to get the final answer.
 
+// Time Complexity: O(n log n) for sorting, O(n) for processing the array, where n is the size of the array.
+// Space Complexity: O(1) for the carry and result string (ignoring the output size).
 
 class Solution {
-  public:
-    string minSum(vector<int> &arr) {
-        string ans;
-        int carry = 0;
-        sort(arr.begin(), arr.end());
-        for (int i = arr.size() - 1; i >= 0; i -= 2) {
-            int sum = (arr[i] + (i - 1 >= 0 ? arr[i - 1] : 0) + carry);
-            ans.push_back('0' + (sum % 10));
-            carry = (sum / 10);
+    public:
+        // Function to find the minimum sum by pairing elements of the array
+        string minSum(vector<int> &arr) {
+                string ans; // To store the result as a string
+                int carry = 0; // To handle carry over 10
+                sort(arr.begin(), arr.end()); // Sort the array in ascending order
+                // Iterate from the end, pairing two elements at a time
+                for (int i = arr.size() - 1; i >= 0; i -= 2) {
+                        // Sum the current element, its pair (if exists), and carry
+                        int sum = (arr[i] + (i - 1 >= 0 ? arr[i - 1] : 0) + carry);
+                        ans.push_back('0' + (sum % 10)); // Store the last digit of sum
+                        carry = (sum / 10); // Update carry
+                }
+                // If any carry remains, add it to the result
+                if (carry) ans.push_back('0' + carry);
+                // Remove leading zeros from the result (if any)
+                while (ans.size() > 1 && ans.back() == '0') ans.pop_back();
+                // Reverse the string to get the correct order
+                reverse(ans.begin(), ans.end());
+                return ans;
         }
-        if (carry) ans.push_back('0' + carry);
-        while (ans.size() > 1 && ans.back() == '0') ans.pop_back();
-        reverse(ans.begin(), ans.end());
-        return ans;
-    }
 };
