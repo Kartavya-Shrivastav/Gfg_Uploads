@@ -18,16 +18,24 @@ class Solution {
     int getCount(int n) {
         vector<vector<int>> adj={{0,8}, {1,2,4}, {1,2,3,5}, {2,3,6}, {1,4,5,7},
                         {2,4,5,6,8}, {3,5,6,9}, {4,7,8}, {5,7,8,9,0}, {6,8,9}};
+        // Initialize two vectors to store the number of ways to reach each key.
+        // v: stores the ways for the previous step, dp: stores the ways for the current step.
         vector<int> v(10,1), dp(10,1);
+
+        // Iterate for each digit position from 2 to n
         for(int i=1;i<n;i++){
+            // For each key (0-9)
             for(int j=0;j<10;j++){
-                dp[j]=0;
-                for(auto k:adj[j]){
-                    dp[j] += v[k];
-                }
+            dp[j]=0; // Reset current count for key j
+            // For each adjacent key k to key j
+            for(auto k:adj[j]){
+                dp[j] += v[k]; // Add the ways to reach key k in the previous step
             }
-            v = dp;
+            }
+            v = dp; // Update v for the next iteration
         }
+
+        // Sum all possible ways for the last digit position
         return accumulate(dp.begin(), dp.end(), 0);
     }
 };
