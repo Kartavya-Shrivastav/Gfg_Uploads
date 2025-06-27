@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Mobile Numeric Keypad
+// Approach: Use dynamic programming to count the number of valid sequences of key presses.
+
+// Steps:
+// 1. Define the adjacency list for each key on the keypad.
+// 2. Initialize a vector to keep track of the number of ways to reach each key.
+// 3. For each digit from 1 to n, update the number of ways to reach each key based on the previous counts.
+// 4. Return the total count of valid sequences after processing all digits.
+
+// Time Complexity: O(n * 10), where n is the number of digits and 10 is the number of keys.
+// Space Complexity: O(10), for storing the counts of each key.
+
 class Solution {
   public:
     int getCount(int n) {
