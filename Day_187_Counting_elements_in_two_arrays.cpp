@@ -16,21 +16,29 @@ using namespace std;
 // Space Complexity: O(m), for the frequency array.
 
 class Solution {
-  public:
-    vector<int> countLessEq(vector<int>& a, vector<int>& b) {
-        int mx=*max_element(begin(b),end(b));
-        vector<int>arr(mx+1);
-        for(int i:b){
-            arr[i]++;
+    public:
+        // Function to count, for each element in 'a', the number of elements in 'b' less than or equal to it
+        vector<int> countLessEq(vector<int>& a, vector<int>& b) {
+                // Find the maximum element in array b to size the frequency array
+                int mx = *max_element(begin(b), end(b));
+                vector<int> arr(mx + 1, 0); // Frequency array for elements in b
+
+                // Count occurrences of each element in b
+                for (int i : b) {
+                        arr[i]++;
+                }
+
+                // Compute cumulative frequency so that arr[i] contains count of elements <= i
+                for (int i = 1; i < mx + 1; i++) {
+                        arr[i] += arr[i - 1];
+                }
+
+                vector<int> ans;
+                // For each element in a, find how many elements in b are <= it
+                for (int i : a) {
+                        int x = i >= mx ? arr[mx] : arr[i];
+                        ans.push_back(x);
+                }
+                return ans;
         }
-        for(int i=0;i<mx+1;i++){
-            arr[i]+=arr[i-1];
-        }
-        vector<int>ans;
-        for(int i:a){
-           int x=i>=mx?arr[mx]:arr[i];
-           ans.push_back(x);
-        }
-        return ans;
-    }
 };
