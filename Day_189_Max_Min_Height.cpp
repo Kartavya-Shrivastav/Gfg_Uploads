@@ -4,9 +4,6 @@ using namespace std;
 // Problem: Maximize the minimum height of plants after at most k water additions
 // Approach: Use binary search to find the maximum possible minimum height after watering the plants.
 
-// Helper function to check if it's possible to achieve a minimum height t with k water additions
-// and a watering range of w.
-
 // Steps:
 // 1. Initialize a difference array to track water additions.
 // 2. Iterate through each plant and calculate the current height after applying water.
@@ -19,6 +16,8 @@ using namespace std;
 // Space Complexity: O(n) for the difference array.
 
 
+// Helper function to check if it's possible to achieve a minimum height t with k water additions
+// and a watering range of w.
 bool check(int t, int n, int k, int w, vector<int>& arr) {
     int currWater = 0; // Tracks the current water added at position i
     int dayUsed = 0;   // Total water used so far
