@@ -17,25 +17,27 @@ using namespace std;
 
 
 class Solution {
-  public:
-     int totalElements(vector<int> &arr) { 
-        int ans=0;
-        int i=0,j=0;
-        map<int,int> mp;
-        while(j<arr.size()){
-            mp[arr[j]]++;
-            int c=mp.size();
-            while(c>2){
-                mp[arr[i]]--;
-                if(mp[arr[i]]==0){
-                    mp.erase(arr[i]);
-                    c--;
+    public:
+        // Function to find the length of the longest subarray with at most two distinct integers
+        int totalElements(vector<int> &arr) { 
+                int ans = 0; // To store the maximum length found
+                int i = 0, j = 0; // Window pointers
+                map<int, int> mp; // Map to store the count of each integer in the current window
+                while (j < arr.size()) {
+                        mp[arr[j]]++; // Add current element to the map
+                        int c = mp.size(); // Number of distinct integers in the window
+                        // If more than 2 distinct integers, shrink window from the left
+                        while (c > 2) {
+                                mp[arr[i]]--; // Decrease count of the leftmost element
+                                if (mp[arr[i]] == 0) {
+                                        mp.erase(arr[i]); // Remove element if its count becomes 0
+                                        c--; // Decrement the count of distinct integers
+                                }
+                                i++; // Move left pointer to the right
+                        }
+                        ans = max(ans, j - i + 1); // Update the maximum length
+                        j++; // Expand window to the right
                 }
-                i++;
-            }
-            ans=max(ans,j-i+1);
-            j++;
+                return ans; // Return the maximum length found
         }
-        return ans;
-    }
 };
