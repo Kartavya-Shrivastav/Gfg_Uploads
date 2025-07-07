@@ -19,20 +19,22 @@ using namespace std;
 class Solution {
   public:
     vector<int> nextLargerElement(vector<int> &arr) {
-        // code here
-        int  n = arr.size();
-        stack<int>st;
-        vector<int>ans(n,-1);
-        for(int i=0 ; i<n*2 ; i++){
-            while(!st.empty() && arr[st.top()]<arr[i%n]){
-                  ans[st.top()] = arr[i%n];
-              st.pop();
-          }
-          if(i<n)
-          st.push(i);
-      }
-      return ans;
-            
+        int n = arr.size();
+        stack<int> st; // Stack to keep indices of elements
+        vector<int> ans(n, -1); // Initialize result vector with -1
+
+        // Iterate through the array twice to handle circular nature
+        for (int i = 0; i < n * 2; i++) {
+            // While stack is not empty and current element is greater than element at stack's top index
+            while (!st.empty() && arr[st.top()] < arr[i % n]) {
+                ans[st.top()] = arr[i % n]; // Set next greater element for index at stack's top
+                st.pop(); // Remove the index from stack
+            }
+            // Only push indices from the first pass (i < n)
+            if (i < n)
+            st.push(i);
+        }
+        return ans; 
     }
 };
 
