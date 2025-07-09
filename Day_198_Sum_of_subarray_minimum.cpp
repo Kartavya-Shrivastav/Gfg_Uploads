@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given an array of integers, find the sum of the minimums of all subarrays.
+// Approach: Use a stack to find the previous and next smaller elements for each element in the array.
+
+// Steps:
+// 1. Initialize two vectors to store the indices of the previous and next smaller elements for each element in the array.
+// 2. Use a stack to iterate through the array from left to right to find the previous smaller elements.
+// 3. Use another stack to iterate through the array from right to left to find the next smaller elements.
+// 4. For each element, calculate the contribution of that element to the sum of minimum subarray minimums using the 
+//    indices of the previous and next smaller elements.
+// 5. Return the total sum.
+
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(n), for the stacks and vectors.
+
 class Solution {
   public:
     int sumSubMins(vector<int> &arr) {
