@@ -1,3 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+// Problem Statement: Count the number of pairs (i, j) such that gcd(arr[i], arr[j]) = 1 for all i < j in the array `arr`.
+// Approach: Use the Möbius function and inclusion-exclusion principle to count coprime pairs efficiently.
+
+// Stpes:
+// 1. Calculate the maximum value `m` in the array `arr`.
+// 2. Create a frequency array `f` to count occurrences of each number up to `m`.
+// 3. Use the Sieve of Eratosthenes to compute the Möbius function `mu` for each integer up to `m`.
+// 4. For each divisor `d`, count how many numbers in `arr` are divisible by `d` using the frequency array `f`.
+// 5. Use the Möbius function to apply the inclusion-exclusion principle to count coprime pairs.
+
+// Time Complexity: O(m log log m + n log n) — where `m` is the maximum element in `arr` and `n` is the size of `arr`.
+// Space Complexity: O(m) — for the frequency and Möbius function arrays.
+
 class Solution {
   public:
     int cntCoprime(vector<int>& arr) {
