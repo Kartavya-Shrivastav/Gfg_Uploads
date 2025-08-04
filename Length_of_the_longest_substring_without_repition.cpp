@@ -6,10 +6,8 @@ class Solution {
         int mx=0;
         vector<int>frq(26,0);
         
-        for(int r=0; r<n;r++){
-            
+        for(int r=0; r<n;r++){  
             frq[s[r]-'a']++;
-            
             while(frq[s[r]-'a']>1){
                 frq[s[l]-'a']--;
                 l++;
