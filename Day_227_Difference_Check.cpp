@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Find the minimum time difference between any two time strings in a list
+// Approach: Convert time strings to seconds, sort them, and calculate the differences.
+
+// Steps:
+// 1. Convert each time string into total seconds from the start of the day.
+// 2. Store these seconds in a vector.
+// 3. Sort the vector of seconds.
+// 4. Calculate the differences between consecutive times in the sorted vector.
+// 5. Also calculate the difference between the last and first time to account for wrap-around.
+// 6. Return the minimum difference found.
+
+// Time Complexity: O(n log n), where n is the number of time strings (due to sorting)
+// Space Complexity: O(n), for storing the converted times in a vector
+
 class Solution {
   public:
     int minDifference(vector<string> &arr) {
