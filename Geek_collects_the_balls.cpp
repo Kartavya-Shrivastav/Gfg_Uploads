@@ -1,3 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Find the maximum number of balls that can be collected from two arrays
+// Approach: Use two pointers to traverse both arrays and collect balls while handling duplicates.
+
+// Steps:
+// 1. Initialize two pointers for the two arrays and two sums to keep track of collected balls.
+// 2. Compare the current elements of both arrays.
+// 3. If the elements are equal, collect balls from both arrays, handling duplicates.
+// 4. If the elements are not equal, add the smaller element's value to the corresponding sum and move the pointer.
+// 5. Continue until one of the arrays is fully traversed.
+// 6. Add any remaining elements from the non-empty array to its sum.
+// 7. Return the maximum of the two sums.
+
+// Time Complexity: O(n + m), where n and m are the lengths of the two arrays
+// Space Complexity: O(1), as we are using only a few variables for sums and
+
 class Solution {
   public:
     long long maxBalls(int n, int m, vector<int> a, vector<int> b) {
