@@ -1,3 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Find the maximum sum of lengths of two non-overlapping palindromic substrings
+// Approach: Use Manacher's algorithm to find all palindromic substrings and then calculate the maximum sum of lengths of two non-overlapping palindromes
+
+// Steps:
+// 1. Use Manacher's algorithm to find the lengths of palindromes centered at each character in the string.
+// 2. Create two arrays: one for the best palindrome ending at each index and another
+//    for the best palindrome starting at each index.
+// 3. Iterate through the string to fill these arrays with the maximum lengths of palindromes that end or start at each index.
+// 4. Traverse the string to find the maximum sum of lengths of two non-overlapping palindromic substrings by combining the best
+//    palindrome ending before an index with the best palindrome starting after that index.
+// 5. Return the maximum sum found.
+
+// Time Complexity: O(n), where n is the length of the string (due to linear traversal and Manacher's algorithm)
+// Space Complexity: O(n), for storing the lengths of palindromes and the best lengths at each index
+
 class Solution {
   public:
     int maxSum(string &s) {
