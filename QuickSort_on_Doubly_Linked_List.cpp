@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 // Problem: Implement quicksort partitioning for a doubly linked list.
 // Approach: Use the last node as a pivot and traverse the list from the beginning, swapping values greater than the pivot to ensure
 //           correct partitioning before recursive calls.
