@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Function to find the smallest window in s that contains all characters of p
+// Approach: Use sliding window technique with two pointers
+
+// Steps:
+// 1. Create two frequency arrays to count characters in p and the current window in s.
+// 2. Use two pointers to represent the current window in s.
+// 3. Expand the right pointer to include characters until all characters of p are included.
+// 4. Contract the left pointer to find the minimum window that still contains all characters of p.
+// 5. Return the smallest window found or an empty string if no such window exists.
+
+// Time Complexity: O(n), where n is the length of the string s
+// Space Complexity: O(1), since the frequency arrays have a fixed size of 26
+
 class Solution {
   public:
     string smallestWindow(string &s, string &p) {
