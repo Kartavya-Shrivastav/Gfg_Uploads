@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to find the sum of modes in all subarrays of size k
+// Approach: Sliding Window + HashMap + Set
+
+// Steps:
+// 1. Initialize a sliding window with two pointers (x, y).
+// 2. Use a HashMap to count the frequency of elements in the current window.
+// 3. Use a Set to keep track of the modes (most frequent elements) in the current window.
+// 4. When the window size exceeds k, remove the leftmost element and update the frequency map and set.
+// 5. When the window size is exactly k, add the mode to the result.
+
+// Time Complexity: O(n log k) due to the set operations
+// Space Complexity: O(k) for the sliding window
 
 class Solution {
   public:
