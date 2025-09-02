@@ -1,4 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
 
+// Problem: Swap Kth node from beginning and end in a linked list.
+// Approach: Find the Kth node from the beginning and the Kth node from the end, then swap their values.
+
+// Steps:
+// 1. Find the Kth node from the beginning.
+// 2. Find the Kth node from the end.
+// 3. Swap their values.
+// 4. Return the head of the modified list.
+
+// Time Complexity: O(n) 
+// Space Complexity: O(1)
 
 class Solution {
   public:
