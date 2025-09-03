@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Find the median of two sorted arrays of different sizes
+// Approach: Merge the two arrays and find the median
+
+// Steps:
+// 1. Merge the two arrays into a single sorted array.
+// 2. Find the median of the merged array.
+// 3. Return the median.
+
+// Time Complexity: O(n log n)
+// Space Complexity: O(n)
+
 class Solution {
   public:
     double medianOf2(vector<int>& a, vector<int>& b) {
