@@ -17,7 +17,6 @@
 class Solution {
   public:
     Node *reverseKGroup(Node *head, int k) {
-        // code here
         Node* prev = NULL;
         Node* curr = head;
         Node* next = NULL;
