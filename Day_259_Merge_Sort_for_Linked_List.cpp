@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Sort a linked list using Merge Sort
+// Approach: Convert linked list to array, sort the array, and then update the linked list
+
+// Steps:
+// 1. Traverse the linked list and store the values in a vector.
+// 2. Sort the vector.
+// 3. Traverse the linked list again and update the node values with the sorted values from the vector.
+// 4. Return the head of the sorted linked list.
+
+// Time Complexity: O(N log N) due to sorting the array
+// Space Complexity: O(N) for storing the values in the vector
 
 /*
 The structure of linked list is the following
