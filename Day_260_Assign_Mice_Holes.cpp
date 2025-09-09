@@ -1,14 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Assign Mice to Holes such that the maximum distance any mouse has to travel is minimized
+// Approach: Sort both mice and holes positions, then pair them in sorted order
+
+// Steps:
+// 1. Sort the positions of mice and holes.
+// 2. Calculate the absolute distance for each pair of mouse and hole.
+// 3. Track the maximum distance encountered.
+// 4. Return the maximum distance as the result.
+
+// Time Complexity: O(N log N) due to sorting
+// Space Complexity: O(1) if sorting in place, otherwise O(N) for storing sorted arrays
+
 class Solution {
   public:
     int assignHole(vector<int>& mices, vector<int>& holes) {
-        // code here
-          int n = mices.size();
+        int n = mices.size();
         
-        // Step 1: Sort both arrays
         sort(mices.begin(), mices.end());
         sort(holes.begin(), holes.end());
         
-        // Step 2: Find max difference
         int maxTime = 0;
         for (int i = 0; i < n; i++) {
             maxTime = max(maxTime, abs(mices[i] - holes[i]));
