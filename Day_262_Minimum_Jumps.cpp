@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given an array where each element represents the maximum jump length at that position, find the minimum number of jumps to reach the last index.
+// Approach: Use a greedy approach to keep track of the farthest reachable index and the number of jumps made.
+
+// Steps:
+// 1. Initialize variables to track the maximum reachable index, the number of steps we can still take, and the number of jumps made.
+// 2. Iterate through the array, updating the maximum reachable index and decrementing the steps.
+// 3. When steps reach zero, increment the jump count and update steps to the number of steps to reach the new maximum reachable index.
+// 4. If at any point the current index exceeds the maximum reachable index, return -1 as it's not possible to reach the end.
+// 5. If we reach the last index, return the number of jumps made.
+
+// Time Complexity: O(N) where N is the length of the array
+// Space Complexity: O(1) as we are using a constant amount of space
+
+
 class Solution {
   public:
     int minJumps(vector<int>& arr) {
