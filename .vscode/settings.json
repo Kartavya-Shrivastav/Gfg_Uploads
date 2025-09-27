@@ -60,6 +60,7 @@
     "*.embeddedhtml": "html",
     "regex": "cpp",
     "vector": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "array": "cpp"
   }
 }
