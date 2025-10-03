@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Possible Words From Phone Digits
+// Approach: We can use backtracking to generate all possible words from the given phone digits.
+
+// Steps:
+// 1. Create a mapping of digits to their corresponding characters as per a traditional phone keypad.
+// 2. Define a recursive function that builds words by appending characters corresponding to each digit.
+// 3. When a word is formed (i.e., when the current index reaches the size of the input array), add it to the result list.
+// 4. Use backtracking to explore all combinations of characters for the given digits.
+// 5. Finally, return the list of possible words.
+
+// Time Complexity: O(4^n) in the worst case (for digits like 7 and 9 which map to 4 letters)
+// Space Complexity: O(n) for the recursion stack and O(m) for storing the results
+
 class Solution {
   public:
     vector<string> ans;
