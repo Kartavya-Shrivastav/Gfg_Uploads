@@ -1,4 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
 
+// Problem: Rat in a Maze
+// Approach: We can use backtracking to explore all possible paths from the top-left corner to the bottom-right corner of the maze. We will keep track of visited cells to avoid cycles and only move to cells that are open (1).
+
+// Steps:
+// 1. Define a recursive function that explores all four possible directions (down, left, right, up) from the current cell.
+// 2. When we reach the bottom-right corner, add the current path to the result list.
+// 3. Use backtracking to mark cells as visited and unvisited as we explore different paths.
+// 4. Finally, return the list of all valid paths.
+
+// Time Complexity: O(4^(n^2)) in the worst case (for exploring all possible paths in an n x n maze)
+// Space Complexity: O(n^2) for the recursion stack and O(m) for storing the results
 
 class Solution {
   public:
