@@ -1,7 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Expression Add Operators
+// Approach: We can use backtracking to generate all possible expressions by inserting '+', '-', and '*' between the digits of the input string. We need to evaluate each expression to check if it equals the target value.
+
+// Steps:
+// 1. Define a recursive function that builds expressions by adding operators between digits.
+// 2. When we reach the end of the string, evaluate the expression and check if it equals the target value. If it does, add it to the result list.
+// 3. Use backtracking to explore all combinations of operators, ensuring to handle operator precedence correctly (especially for multiplication).
+// 4. Finally, return the list of valid expressions.
+
+// Time Complexity: O(4^n) in the worst case (for exploring all combinations of operators between n digits)
+// Space Complexity: O(n) for the recursion stack and O(m) for storing the results
+
 class Solution {
   public:
     vector<string> findExpr(string &s, int target) {
-        // code here
         vector<string> ans;
         solve(0, s, target, "", ans, 0, 0);
         return ans;
