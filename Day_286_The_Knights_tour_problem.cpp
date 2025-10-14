@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: The Knight's Tour Problem
+// Approach: We can use backtracking to explore all possible moves of the knight on the chessboard. 
+//           We will keep track of the visited cells to avoid cycles and ensure that we visit each cell exactly once.
+
+// Steps:
+// 1. Define a recursive function that explores all eight possible moves of the knight from the current cell.
+// 2. When we have visited all cells (i.e., the count of visited cells equals n*n), we store the current board configuration as a valid solution.
+// 3. Use backtracking to mark cells as visited and unvisited as we explore different paths.
+// 4. Finally, return the board configuration if a solution is found.
+
+// Time Complexity: O(8^(n^2)) in the worst case (for exploring all possible paths in an n x n chessboard)
+// Space Complexity: O(n^2) for the recursion stack and O(n^2) for storing the board configuration
 class Solution {
 public:
 vector<vector<int>>ans;
