@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Construct Tree from Preorder & Postorder
+// Approach: Use the properties of preorder and postorder traversals to recursively construct the tree.
+
+// Steps:
+// 1. Start with the first element of the preorder array as the root.
+// 2. Find the index of the root in the postorder array.
+// 3. Recursively construct the left and right subtrees.
+// 4. Return the constructed tree.
+
+// Time Complexity: O(n^2) in the worst case due to the search for the root in the postorder array.
+// Space Complexity: O(n) for the recursion stack and the tree nodes.
+
 class Solution {
   public:
     int find(int x,int s, int e, vector<int> &post){
