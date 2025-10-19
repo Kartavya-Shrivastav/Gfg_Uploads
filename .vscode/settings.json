@@ -61,6 +61,10 @@
     "regex": "cpp",
     "vector": "cpp",
     "string": "cpp",
-    "array": "cpp"
+    "array": "cpp",
+    "bitset": "cpp",
+    "initializer_list": "cpp",
+    "utility": "cpp",
+    "valarray": "cpp"
   }
 }
