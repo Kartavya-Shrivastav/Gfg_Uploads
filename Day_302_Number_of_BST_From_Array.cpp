@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given an array of unique integers, for each element, find the number of distinct BSTs that can be formed with that element as the root.
+// Approach: Use Catalan numbers to compute the number of distinct BSTs for left and right subtrees.
+
+// Steps:
+// 1. Precompute Catalan numbers up to the size of the array.
+// 2. For each element in the array, determine how many elements are smaller (left subtree) and how many are larger (right subtree).
+// 3. The number of distinct BSTs with that element as root is the product of the Catalan numbers of the left and right subtree sizes.  
+// 4. Store the results in an answer array and return it.
+
+// Time Complexity: O(n^2) due to the nested loop for Catalan number computation.
+// Space Complexity: O(n) for storing Catalan numbers and the answer array.
+
 class Solution {
   public:
     vector<int> countBSTs(vector<int>& arr) {
