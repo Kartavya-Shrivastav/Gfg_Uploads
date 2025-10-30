@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given a 2D grid consisting of 'X' and 'O', replace all 'O's that are not connected to the border with 'X's. An 'O' is considered connected to the border if it is on the border itself or connected to another 'O' that is connected to the border.
+// Approach: Use BFS to mark all 'O's connected to the border. Then, replace all unmarked 'O's with 'X's and revert the marked ones back to 'O's.
+
+// Steps:
+// 1. Traverse the border of the grid and for each 'O' found, perform a BFS to mark all connected 'O's.
+// 2. After marking, traverse the entire grid and replace unmarked 'O's with 'X's.
+// 3. Finally, revert the marked 'O's back to 'O's.
+
+// Time Complexity: O(N*M) where N is the number of rows and M is the number of columns in the grid.
+// Space Complexity: O(N*M) in the worst case for the queue used in BFS.
+
 class Solution {
   public:
     void fill(vector<vector<char>>& grid) {
