@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given a directed acyclic graph (DAG) with V vertices and E edges, determine the maximum number of edges that can be added to the graph without creating a cycle.
+// Approach: The maximum number of edges in a DAG with V vertices is V*(V-1)/2. The number of edges that can be added is the difference between this maximum and the current number of edges E.
+
+// Steps:
+// 1. Calculate the maximum number of edges in a complete graph with V vertices.
+// 2. Subtract the current number of edges E from this maximum to get the number of edges that can be added.
+// 3. Return this value.
+
+// Time Complexity: O(V^2) due to the adjacency matrix representation and checking for existing edges.
+// Space Complexity: O(V^2) for the adjacency matrix.
+
 class Solution {
   public:
     int maxEdgesToAdd(int V, vector<vector<int>>& edges) {
