@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given an n x n matrix 'mat' where each cell contains a certain number of chocolates or -1 (indicating a blocked cell), two players start from the top-left corner (0,0) and move to the bottom-right corner (n-1,n-1). Both players can only move down or right at any point in time. The goal is to maximize the total number of chocolates collected by both players, ensuring that if both players land on the same cell, the chocolates from that cell are only counted once.
+// Approach: 
+
+// Steps:
+// 1. Use a 3D dynamic programming (DP) array to keep track of the maximum chocolates collected when both players have taken 'k' steps and are at positions (i1, j1) and (i2, j2).
+// 2. Iterate through all possible steps 'k' from 0 to 2*(n-1).
+// 3. For each step 'k', iterate through all possible positions (i1, j1) and (i2, j2) that the two players can occupy.
+// 4. For each position, check all possible previous positions from which the players could have arrived (either from the left or from above).
+// 5. Update the DP array with the maximum chocolates collected, ensuring to account for the case where both players land on the same cell.
+// 6. The final answer will be found in dp[2*(n-1)][n-1][n-1], which represents both players reaching the bottom-right corner.
+
+// Time complexity is O(n^3) 
+// Space complexity is O(n^3).
+
 class Solution {
 public:
     int chocolatePickup(vector<vector<int>>& mat) {
