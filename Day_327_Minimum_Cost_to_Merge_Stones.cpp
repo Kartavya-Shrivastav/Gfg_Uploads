@@ -1,16 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Problem: 
-
-// Approach:
+// Problem: Minimum Cost to Merge Stones
+// Approach: Dynamic Programming with prefix sums
 
 // Steps:
-// 1.
-// 2.
+// 1. Calculate prefix sums for quick range sum queries.
+// 2. Use a 3D DP array where dp[i][j][t] represents the minimum cost to merge stones from index i to j into t piles.
+// 3. Iterate over all possible lengths and partitions to fill the DP table.
+// 4. Return the minimum cost to merge the entire array into one pile.
 
-// Time Complexity
-// Space Complexity:
+// Time Complexity: O(n^3 * k) where n is the number of stones and k is the number of piles to merge into.
+// Space Complexity: O(n^3 * k) where n is the number of stones and k is the number of piles to merge into.
 
 class Solution {
 public:
