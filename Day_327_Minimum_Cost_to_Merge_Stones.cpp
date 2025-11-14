@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: 
+
+// Approach:
+
+// Steps:
+// 1.
+// 2.
+
+// Time Complexity
+// Space Complexity:
+
 class Solution {
 public:
     int mergeStones(vector<int>& stones, int k) {
