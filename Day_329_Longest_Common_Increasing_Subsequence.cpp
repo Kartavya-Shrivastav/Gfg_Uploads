@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Longest Common Increasing Subsequence
+// Approach: Dynamic Programming
+
+// Steps:
+// 1. Use a 1D DP array where dp[j] represents the length of the longest common increasing subsequence ending with b[j].
+// 2. Iterate through each element in array a and for each element, iterate through array b.
+// 3. For each pair of elements, update the DP array based on the conditions of equality and increasing order.
+// 4. Return the maximum value in the DP array as the result.
+
+// Time Complexity: O(n * m) where n and m are the sizes of arrays a and b respectively.
+// Space Complexity: O(m) where m is the size of array b.
+
 class Solution {
   public:
     int LCIS(vector<int> &a, vector<int> &b) {
