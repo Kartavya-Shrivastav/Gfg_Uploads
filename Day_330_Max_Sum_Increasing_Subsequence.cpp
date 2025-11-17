@@ -1,7 +1,6 @@
 class Solution {
 public:
     bool kLengthApart(vector<int>& nums, int k) {
-
         int n = nums.size();
         int pre_index;
         bool f = true;
