@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Minimum Cost to Cut a Stick of length N
+// Approach: Dynamic Programming
+
+// Steps:
+// 1. Add the boundaries (0 and N) to the cuts array and sort it
+// 2. Use a DP table to store minimum cost for each interval
+// 3. Iterate over intervals of increasing length
+// 4. Calculate cost for each possible cut within the interval
+// 5. Return the minimum cost for the entire stick
+
+// Time Complexity: O(m^3) where m is the number of cuts
+// Space Complexity: O(m^2)
+
 class Solution {
 public:
     int minCutCost(int n, vector<int>& cuts) {
