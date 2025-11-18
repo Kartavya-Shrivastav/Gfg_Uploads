@@ -1,8 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Number of Ways to Arrive at Destination
+// Approach: Dijkstra's Algorithm with Path Counting
+
+// Steps:
+// 1. Initialize adjacency list from edges
+// 2. Use a priority queue for Dijkstra's algorithm
+// 3. Maintain distance and ways arrays
+// 4. Update distances and ways while traversing
+// 5. Return ways to reach destination
+
+// Time Complexity: O(E log V)
+// Space Complexity: O(V + E)
+
 class Solution {
   public:
     int countPaths(int V, vector<vector<int>>& edges) {
-        // code here
-         vector<pair<int,int>> adj[V];
+        vector<pair<int,int>> adj[V];
         priority_queue<pair<int,int>, 
                        vector<pair<int,int>> ,
                        greater<pair<int,int>>> pq;
