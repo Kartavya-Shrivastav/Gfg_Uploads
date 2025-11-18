@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Shortest Common Supersequence
+// Approach: Dynamic Programming
+
+// Steps:
+// 1. Create a DP table to find the length of the Longest Common Subsequence (LCS)
+// 2. Fill the DP table based on character matches and previous computations
+// 3. Calculate the length of the Shortest Common Supersequence (SCS) using the formula:
+//    SCS Length = Length of s1 + Length of s2 - Length of LCS
+// 4. Return the SCS length
+// Time Complexity: O(m*n) where m and n are lengths of s1 and s2
+// Space Complexity: O(m*n)
+
+
 class Solution {
   public:
     int minSuperSeq(string &s1, string &s2) {
