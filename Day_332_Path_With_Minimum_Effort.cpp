@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Path With Minimum Effort
+// Approach: Dijkstra's Algorithm
+
+// Steps:
+// 1. Use a priority queue to explore the matrix cells based on the minimum effort required
+// 2. Maintain a distance matrix to track the minimum effort to reach each cell
+// 3. Explore all four possible directions from the current cell and update the effort accordingly
+// 4. Return the minimum effort required to reach the bottom-right cell
+
+// Time Complexity: O(N*M*log(N*M)) where N and M are the dimensions of the matrix
+// Space Complexity: O(N*M) for the distance matrix and priority queue
+
 class Solution {
   public:
     struct Cell {
