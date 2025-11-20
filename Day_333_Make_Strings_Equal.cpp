@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Make Strings Equal
+// Approach: Floyd-Warshall Algorithm
+
+// Steps:
+// 1. Create a distance matrix to represent the cost of transforming one character to another
+// 2. Initialize the distance matrix with given transformation costs
+// 3. Use the Floyd-Warshall algorithm to compute the minimum transformation costs between all pairs of characters
+// 4. For each character position in the two strings, find the minimum cost to make them equal
+// 5. Sum up the minimum costs for all character positions
+// 6. If any position cannot be made equal, return -1
+
+// Time Complexity: O(26^3 + N) where N is the length of the strings
+// Space Complexity: O(26^2) for the distance matrix
+
 class Solution {
 public:
     int minCost(string &s, string &t, vector<vector<char>> &transform,vector<int> &cost) {
