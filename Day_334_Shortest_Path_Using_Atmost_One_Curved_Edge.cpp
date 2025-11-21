@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Shortest Path Using Atmost One Curved Edge
+// Approach: Modified Dijkstra's Algorithm
+
+// Steps:
+// 1. Create an adjacency list to represent the graph with both straight and curved edges
+// 2. Use a priority queue to implement a modified Dijkstra's algorithm
+// 3. Maintain a distance array with two states: one for paths without using a curved edge and one for paths using one curved edge
+// 4. For each node, explore its neighbors and update distances accordingly 
+// 5. Return the minimum distance to the destination node considering both states
+
+// Time Complexity: O((V + E) log V) where V is the number of vertices and E is the number of edges
+// Space Complexity: O(V + E) for the adjacency list and distance array
+
 class Solution {
   public:
     int shortestPath(int V, int a, int b, vector<vector<int>> &edges) {
