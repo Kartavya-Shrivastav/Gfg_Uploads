@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Minimum Operations to Connect Hospitals
+// Approach: Disjoint Set Union (DSU)
+
+// Steps:
+// 1. Initialize a Disjoint Set Union (DSU) structure to manage connected components
+// 2. Iterate through each edge and perform union operations to connect hospitals
+// 3. Count the number of connected components
+// 4. Calculate the minimum operations required to connect all hospitals which is (number of components - 1)
+// 5. If the number of edges is less than V-1, return -1 as it's impossible to connect all hospitals with the given edges
+// 6. Return the result
+
+// Time Complexity: O(E * α(V)) where E is the number of edges, V is the number of vertices, and α is the inverse Ackermann function
+// Space Complexity: O(V) for the DSU structure
+
 class DisjointSet{
     vector<int> parent, size;
     public:
