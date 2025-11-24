@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Maximum Stone Removal
+// Approach: Disjoint Set Union (DSU)
+
+// Steps:
+// 1. Represent each stone as a node in a graph.
+// 2. Use DSU to group stones that share the same row or column.
+// 3. Count the number of connected components in the graph.
+// 4. The maximum number of stones that can be removed is the total number of stones minus the number of connected components.
+// 5. Return the result.
+
+// Time Complexity: O(N * α(N)) where N is the number of stones and α is the inverse Ackermann function
+// Space Complexity: O(N) for the DSU structure and maps
 
 class Solution {
   public:
