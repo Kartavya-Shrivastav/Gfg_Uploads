@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Second Best Minimum Spanning Tree
+// Approach: Modified Kruskal's Algorithm with DSU
+
+// Steps:
+// 1. Sort all edges based on their weights.
+// 2. Use DSU to find the Minimum Spanning Tree (MST) and keep track of the edges used.
+// 3. For each edge in the MST, try to find an alternative MST by excluding that edge and including other edges.
+// 4. Keep track of the second minimum weight found during this process.
+// 5. Return the second minimum weight if found, otherwise return -1.
+
+// Time Complexity: O(E log E + E * (E + V)) where E is the number of edges and V is the number of vertices
+// Space Complexity: O(V) for the DSU structure
+
 class Solution {
   public:
     struct DSU{
