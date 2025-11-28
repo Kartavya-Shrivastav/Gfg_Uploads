@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given an integer n, return a subset of the set {1, 2, ..., n} such that the XOR of all elements in the subset is 0.
+// Approach: The XOR of the entire set {1, 2, ..., n} can be computed. If it is not zero, we can exclude one element to make the XOR zero.
+
+// Steps:
+// 1. Compute the XOR of all integers from 1 to n.
+// 2. Determine which element needs to be excluded to make the XOR of the remaining elements zero.
+// 3. Construct the subset by including all elements except the one identified in step 2.
+// 4. Return the constructed subset.
+
+// Time Complexity: O(n) where n is the input integer, as we need to iterate through the numbers from 1 to n.
+// Space Complexity: O(n) for storing the resulting subset.
+
 class Solution {
   public:
     vector<int> subsetXOR(int n) {
