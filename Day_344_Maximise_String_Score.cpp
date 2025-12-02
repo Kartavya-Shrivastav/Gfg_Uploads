@@ -1,3 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given a string s and a list of allowed character jumps, maximize the score of the string by jumping through characters.
+// Approach: Use dynamic programming with precomputation of prefix sums and next occurrence indices to efficiently calculate the maximum score.
+
+// Steps:
+// 1. Create an adjacency matrix to represent allowed jumps between characters.
+// 2. Precompute prefix sums of character ASCII values for quick range sum calculations.
+// 3. Precompute the count of each character up to each index for quick frequency calculations.
+// 4. Precompute the next occurrence indices for each character to facilitate jumps.
+// 5. Use a recursive function with memoization to explore all possible jumps and calculate the maximum score.
+// 6. Return the maximum score obtained.
+
+// Time Complexity: O(n * 26^2) in the worst case, where n is the length of the string, due to the nested loops in the Solve function.
+// Space Complexity: O(n * 26) for storing prefix sums, character counts, and next occurrence indices.
+
 class Solution
 {
 public:
