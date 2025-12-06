@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given a cost matrix where costs[i][j] represents the cost of painting the i-th wall with the j-th color, find the minimum cost to paint all walls such that no two adjacent walls have the same color.
+// Approach: Dynamic Programming with Optimization
+
+// Steps:
+// 1. Initialize a DP array where dp[j] represents the minimum cost to paint up to the current wall with color j.
+// 2. For each wall, use a priority queue to efficiently find the two smallest costs from the previous wall's DP array.
+// 3. For each color of the current wall, calculate the cost by adding the cost of painting the current wall with that color to the minimum cost from the previous wall, ensuring that the same color is not used for adjacent walls.
+// 4. Update the DP array for the current wall and repeat until all walls are processed.
+// 5. The answer will be the minimum value in the DP array after processing all walls.
+
+// Time Complexity: O(n * m)
+// Space Complexity: O(m)
+
 class Solution {
   public:
     int minCost(vector<vector<int>> &costs) {
