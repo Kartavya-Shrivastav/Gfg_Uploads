@@ -1,4 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
 
+// Problem: Given a sequence of matrices, find the most efficient way to multiply these matrices together by determining the optimal parenthesization.
+// Approach: Dynamic Programming
+
+// Steps:
+// 1. Use a DP table where dp[i][j] represents the minimum number of scalar multiplications needed to compute the matrix product from matrix i to matrix j.
+// 2. Use a split table to keep track of the index at which the optimal split occurs for matrices i to j.
+// 3. Iterate over increasing lengths of matrix chains and compute the minimum cost for each subchain by trying all possible split points.
+// 4. After filling the DP and split tables, use a recursive function to construct the optimal parenthesization based on the split points recorded.
+// 5. The answer will be the parenthesization string for the full chain from matrix 0 to matrix n-1.
+
+// Time Complexity: O(n^3)
+// Space Complexity: O(n^2)
 
 class Solution {
     
