@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given an array of integers where each integer is in the range from 1 to n (n = size of array), find all the integers that appear more than once.
+// Approach: Frequency Counting
+
+// Steps:
+// 1. Create a frequency array `same` of size n+1 initialized to zero.
+// 2. Iterate through the input array and for each integer, increment its corresponding index in the frequency array.
+// 3. After populating the frequency array, iterate through it to find all indices (integers) that have a count of 2 or more.
+// 4. Collect these integers into a result array and return it.
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& arr) {
