@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given a 2D matrix `mat` and a list of queries where each query consists of four integers representing the top-left and bottom-right corners of a submatrix, return the sum of elements within each submatrix.
+// Approach: Prefix Sum 2D Array
+
+// Steps:
+// 1. Preprocess the matrix to create a prefix sum matrix where each element at (i, j) contains the sum of all elements from (0, 0) to (i, j).
+// 2. For each query, use the prefix sum matrix to calculate the sum of the specified submatrix in constant time.
+// 3. Return the list of sums for each query.
+
+// Time Complexity: O(n*m + q)
+// Space Complexity: O(1) (if we modify the input matrix for prefix sums)
+
 class Solution {
   public:
     vector<int> prefixSum2D(vector<vector<int>> &mat, vector<vector<int>> &queries) {
