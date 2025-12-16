@@ -1,7 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Given an array `arr`, count the number of indices such that removing the element at that index results in the sum of elements at even indices being equal to the sum of elements at odd indices.
+// Approach: Prefix Sum Arrays for Even and Odd Indices
+
+// Steps:
+// 1. Create two prefix sum arrays: one for sums at even indices and another for sums at odd indices.
+// 2. For each index, calculate the new sums of even and odd indices after removing the element at that index.
+// 3. Count how many times the sums are equal after the removal.    
+// 4. Return the count.
+
+// Complexity Analysis:
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 class Solution {
   public:
     int cntWays(vector<int>& arr) {
-        // code here
         int n=(int)arr.size();
         vector<int>prefixOdd(n+1,0);
         vector<int>prefixEven(n+1,0);
