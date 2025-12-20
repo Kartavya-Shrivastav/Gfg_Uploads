@@ -11,7 +11,7 @@ using namespace std;
 //    b. If the middle element is less than K, move the start pointer to mid + 1.
 //    c. Otherwise, move the end pointer to mid - 1.
 // 3. When the loop ends, start will be at the correct insert position for K.
-// 4. Return the start index.
+// 4. Return the starting index.
 
 // Time Complexity: O(log n)
 // Space Complexity: O(1)
