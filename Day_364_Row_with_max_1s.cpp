@@ -8,7 +8,7 @@ using namespace std;
 // 1. Start from the top-right corner of the matrix.
 // 2. Initialize row index to 0 and column index to the last column.
 // 3. While the row index is within bounds and the column index is non-negative:
-//    a. If the current element is 1, move left (decrement column index) and update the answer to the current row.
+//    a. If the currennt element is 1, move left (decrement column index) and update the answer to the current row.
 //    b. If the current element is 0, move down (increment row index).
 // 4. Return the row index with the maximum number of 1s found, or -1 if no 1s are present.
 
