@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;    
+
+// Problem: Count elements less than or equal to k in a sorted rotated array
+// Approach: Find Pivot and Binary Search
+
+// Steps:
+// 1. Find the pivot point where the array is rotated.
+// 2. Use binary search (upper_bound) to count elements less than or equal to k in both subarrays divided by the pivot.
+// 3. Sum the counts from both subarrays to get the final result.
+// 4. Return the total count.
+
+// Time Complexity: O(log N) for finding pivot + O(log N) for counting in both subarrays = O(log N)
+// Space Complexity: O(1) additional space
+
 class Solution
 {
 public:
