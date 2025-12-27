@@ -1,3 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Kth Smallest Element in a Sorted Matrix
+// Approach: Min-Heap (Priority Queue)
+
+// Steps:
+// 1. Use a min-heap to keep track of the smallest elements from each row.
+// 2. Extract the smallest element from the heap k times.
+// 3. Each time an element is extracted, push the next element from the same row into the heap.
+// 4. The kth extracted element is the answer.
+
+// Time Complexity: O(k log m) where m is the number of rows
+// Space Complexity: O(m) for the heap
+
 class Solution {
   public:
     int kthSmallest(vector<vector<int>> &mat, int k) {
