@@ -1,6 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+class Node {
+  public:
+    int data;
+    Node* next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
+};
+
 // Problem: Add Two Numbers Represented by Linked Lists
 // Approach: Reverse Linked Lists and Add Digits
 
