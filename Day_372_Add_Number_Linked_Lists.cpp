@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Add Two Numbers Represented by Linked Lists
+// Approach: Reverse Linked Lists and Add Digits
+
+// Steps:
+// 1. Reverse both linked lists to facilitate addition from least significant digit.
+// 2. Initialize carry to 0 and create a new linked list to store the result.
+// 3. Traverse both linked lists, adding corresponding digits along with carry.
+// 4. If one linked list is longer, continue adding its remaining digits with carry.
+// 5. If there's a carry left after processing both lists, add a new node with the carry.
+// 6. Reverse the resultant linked list to restore the original order.
+
+// Time Complexity: O(max(N, M)) where N and M are lengths of the two linked lists
+// Space Complexity: O(max(N, M)) for the resultant linked list
 class Solution {
   public:
     Node* reverseLink(Node* head, Node* prev = nullptr) {
