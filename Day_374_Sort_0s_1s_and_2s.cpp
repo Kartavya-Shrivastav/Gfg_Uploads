@@ -4,6 +4,17 @@ using namespace std;
 // Problem: Given an array consisting of only 0s, 1s, and 2s, sort the array in ascending order.
 // Approach: Sorting an Array of 0s, 1s, and 2s Using the Dutch National Flag Algorithm | One Traversal Code.
 
+// Steps:
+// 1. Initialize three pointers: low, mid, and high.
+// 2. Traverse the array with the mid pointer.
+// 3. Depending on the value at arr[mid], swap elements to their correct positions: 
+//    - If arr[mid] is 0, swap it with arr[low] and increment both low and mid.
+//    - If arr[mid] is 1, just increment mid.
+//    - If arr[mid] is 2, swap it with arr[high] and decrement high.
+// 4. Continue this process until mid exceeds high.
+
+// Time Complexity: O(n) as we traverse the array only once.
+// Space Complexity: O(1) as we use only a constant amount of extra space.
 
 class Solution {
   public:
