@@ -1,3 +1,19 @@
+#include <bits/stdc++.h>    
+using namespace std;
+
+// Problem: Given a set of axis-aligned squares on a 2D plane, find a horizontal line that divides the total area covered by these squares into two equal halves.
+// Approach: We use a sweep line algorithm to calculate the total area covered by the squares and then determine the horizontal line that divides this area into two equal parts.
+
+// Steps:
+// 1. Create events for the start and end of each square along the Y-axis.
+// 2. Sort these events by their Y-coordinates.
+// 3. Sweep through these events, maintaining a list of active X-intervals to calculate the union width at each Y-level.
+// 4. Calculate the area covered between consecutive Y-levels and store these strips.
+// 5. Finally, find the horizontal line that divides the total area into two equal parts.
+
+// Time Complexity: O(N log N) due to sorting and interval management.
+// Space Complexity: O(N) for storing events and active intervals.
+
 class Solution {
 public:
     double separateSquares(vector<vector<int>>& squares) {
