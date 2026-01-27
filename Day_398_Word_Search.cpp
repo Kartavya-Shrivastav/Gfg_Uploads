@@ -1,3 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Problem: Word Search in a 2D Grid
+// Given a 2D grid of characters and a word, check if the word exists in the grid.
+// The word can be constructed from letters of sequentially adjacent cells, where "adjacent" cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
+// Approach: Use Depth-First Search (DFS) to explore all possible paths in the grid starting from each cell.
+
+// Steps:
+// 1. Define a helper function that performs DFS to find the word in the grid.
+// 2. If the current index of the word matches the length of the word, return true.
+// 3. Check for out-of-bound indices and character mismatches.
+// 4. Mark the current cell as visited by changing its value temporarily.
+// 5. Recursively call the helper function for all four adjacent cells (up, down, left, right).
+// 6. Backtrack by restoring the original value of the cell.
+// 7. Iterate through each cell in the grid and call the helper function.
+// 8. Return true if the word is found, otherwise return false.
+
+// Time Complexity: O(N * 3^L) where N is the number of cells in the grid and L is the length of the word. Each cell can lead to 3 possible directions (excluding the direction we came from).
+// Space Complexity: O(L) for the recursion stack, where L is the length of the word.
+
 class Solution {
   public:
   bool findMatch(vector<vector<char>> &mat, string word, int x, int y, int wIdx) {
