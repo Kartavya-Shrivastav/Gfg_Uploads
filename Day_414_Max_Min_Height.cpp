@@ -14,6 +14,7 @@ Steps:
 4. Adjust the search range based on whether mid is achievable or not until we find the maximum minimum height. 
 
 Time Complexity: O(n log M), where M is the range of possible heights (from min height to min height + k). Each check involves iterating through all plants, which takes O(n). 
+
 Space Complexity: O(n), due to the difference array used for simulating watering. */
 
 class Solution {
