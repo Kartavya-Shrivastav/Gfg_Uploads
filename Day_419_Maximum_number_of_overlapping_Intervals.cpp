@@ -15,7 +15,7 @@ class Solution {
         int ans = 0;
         
         for (int i = 1; i <= maxVal; i++) diff[i] += diff[i-1];
-        
+
         for (int i = 0; i <= maxVal; i++) ans = max(ans, diff[i]);
         
         return ans;
