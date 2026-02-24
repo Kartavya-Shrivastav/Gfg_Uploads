@@ -15,16 +15,27 @@ Time Complexity: O(n + m) where n and m are the sizes of the two input arrays.
 Space Complexity: O(n + m) in the worst case, if all elements in both arrays are distinct.
 
 */
+
 class Solution {
   public:
-    int findUnion(vector<int>& a, vector<int>& b) {
-        set<int>resultSet;
-        for (int num : a) {
-            resultSet.insert(num); }
+    vector<int> findUnion(vector<int>& a, vector<int>& b) {
+        unordered_map<int,int>m;
+        vector<int>ans;
         
-       for (int num : b) {
-            resultSet.insert(num); }
+        for(int i=0;i<a.size();i++){
+            if(m.count(a[i])==0){
+                m[a[i]]++;
+                ans.push_back(a[i]);
+            }
+        }
         
-        return resultSet.size();
+        for(int i=0;i<b.size();i++){
+            if(m.count(b[i])==0){
+                m[b[i]]++;
+                ans.push_back(b[i]);
+            }
+        }
+        
+        return ans;
     }
 };
