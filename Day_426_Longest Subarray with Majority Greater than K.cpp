@@ -1,3 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+Problem: Given an array of integers arr and an integer k, return the length of the longest subarray where the majority of elements are greater than k.
+A majority of elements in a subarray means that more than half of the elements in the subarray are greater than k.
+
+Approach: We can use a prefix sum approach to solve this problem. We will create a new array where each element is 1 if the corresponding element in the original array is greater than k, and -1 otherwise. Then, we will compute the prefix sum of this new array. The longest subarray with a positive prefix sum will be our answer.  
+
+Steps:
+1. Create a new array `cal` where `cal[i]` is 1 if `arr[i] > k`, and -1 otherwise.
+2. Compute the prefix sum array `psumCal` from the `cal` array.
+3. Use an unordered map to store the first occurrence of each prefix sum value.
+4. Iterate through the prefix sum array:  
+    - If the current prefix sum is greater than 0, update the answer with the length of the subarray from the start to the current index.
+    - If the current prefix sum is not greater than 0, check if there is a previous prefix sum that is one less than the current prefix sum. If it exists, update the answer with the length of the subarray from that index to the current index.
+    - If the current prefix sum has not been seen before, store its index in the unordered map.
+5. Return the maximum length found.
+
+Time Complexity: O(n), where n is the length of the input array.
+Space Complexity: O(n), due to the additional arrays and unordered map used for prefix sums and their indices.
+*/
+
 class Solution {
 public:
   virtual int longestSubarray(vector<int> &arr, int k) {
