@@ -18,6 +18,19 @@ Time Complexity: O(H) where H is the height of the tree, as we may need to trave
 Space Complexity: O(1) for the pointers used to store the predecessor and successor, and O(H) for the recursive call stack in the worst case (skewed tree). In a balanced BST, this would be O(log N).
 */
 
+class Node {
+   public:
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int x){
+        data = x;
+        left = NULL;
+        right = NULL;
+    }
+};
+
 class Solution {
   public:
     vector<Node*> findPreSuc(Node* root, int key) {
