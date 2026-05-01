@@ -1,7 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+Problem: Given two 2D vectors representing the preferences of n men and n women, where men[i] is a list of the preferences of the i -th man and women[i] is a list of the preferences of
+Approach: We can use the Gale-Shapley algorithm to solve the stable marriage problem. The algorithm works as follows:
+
+Steps:
+1. Initialize all men and women as free (not engaged).
+2. While there are free men:
+    a. Select a free man (let's call him "man").
+    b. Let "woman" be the first woman in "man"'s preference list that he hasn't proposed to yet.
+    c. If "woman" is free, then engage "man" and "woman".
+    d. If "woman" is not free, then check if "woman" prefers "man" over her current partner.
+    e. If "woman" prefers "man" over her current partner, then break the engagement and engage "man" and "woman".
+    f. If "woman" does not prefer "man" over her current partner, then add "man" back to the list of free men.
+3. The algorithm terminates when there are no free men left, and the resulting engagements represent a stable matching.
+
+Time Complexity: O(n^2) - Each man can propose to each woman at most once, and there are n men and n women. 
+Space Complexity: O(n^2) - We use a 2D vector to store the preferences of the men and women.
+*/
+
 class Solution {
   public:
     vector<int> stableMarriage(vector<vector<int>> &men, vector<vector<int>> &women) {
-        // code here
         int n=men.size();
         
         vector<int>usedMen(n, -1);
